@@ -1,0 +1,8 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Dialog id="dialog" title="{i18n>changeOperation}">
+		<List id="dialogList" itemPress="onItemPress">
+			<StandardListItem id="listItem1" title="{i18n>addition}" type="Active" />
+			<StandardListItem id="listItem2" title="{i18n>subtraction}" type="Active" />
+		</List>
+	</Dialog>
+</core:FragmentDefinition>

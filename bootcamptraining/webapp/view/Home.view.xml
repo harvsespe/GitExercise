@@ -1,0 +1,10 @@
+<mvc:View controllerName="zbtp.bootcamptraining.controller.Home"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content> 
+            <Text text = "Hello World" class = "fontColorRed" />
+            <Button text = "Button Text" icon="sap-icon://add" press = "onPressBtn" />   
+        </content>
+    </Page>
+</mvc:View>

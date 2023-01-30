@@ -1,0 +1,32 @@
+<mvc:View controllerName="sapips.training.jsonbinding.controller.JSONBinding" xmlns:mvc="sap.ui.core.mvc"
+    xmlns:f="sap.ui.layout.form" displayBlock="true" xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <Panel headerText="Data Binding Basics" class="sapUiResponsiveMargin" width="auto">
+                <f:SimpleForm id="sf1">
+                    <f:content>
+                        <Label text="EID" />
+                        <Input value="{oAddressModel/EID}" enabled="{oAddressModel/enabled}" />
+                        <Label text="Enabled" />
+                        <CheckBox selected="{oAddressModel/enabled}" />
+                    </f:content>
+                </f:SimpleForm>
+            </Panel>
+            <Panel headerText="Address Details" class="sapUiResponsiveMargin" width="auto">
+                <f:SimpleForm id="sf2">
+                    <f:content>
+                        <Label text="Address" />
+                        <Text="{oAddressModel/Address/Street} {oAddressModel/Address/City} {oAddressModel/Address/Zip} {oAddressModel/Address/Country}"
+                            class="sapUiSmallMarginBottom" />
+                        <Link href="{ path: '/EID', formatter: '.formatter.formatMail'}" />
+                        <Label text="Sales Amount" class="sapUiSmallMarginBegin" />
+                        <Input class="sapUiSmallMarginBegin"
+                            value="{ parts: [ {path: '/SalesAmount'}, {path: '/CurrencyCode'} ], type: 'sap.ui.model.type.Currency', formatOptions: {showMeasure: false} }"
+                            maxLength="8"
+                            enabled="true" />
+                    </f:content>
+                </f:SimpleForm>
+            </Panel>
+        </content>
+    </Page>
+</mvc:View>
