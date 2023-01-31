@@ -33,6 +33,21 @@ sap.ui.define([
                 oView.setModel(oAddressModel, "oAddressModel");
 
 
+            },
+            onSelectProduct: function (oEvent) {
+                //get control list            
+                var oList = oEvent.getSource();
+                //get selected item                
+                var oSelItem = oList.getSelectedItem();
+                var oBindingContext = oSelItem.getBindingContext("ProductsModel");
+                //get the context binding path               
+                //var sSelItemPath = oSelItem.getBindingContextPath();
+                var sSelItemPath = oBindingContext.getPath();
+                var oPanel = this.byId("Panel4");
+                oPanel.bindElement({
+                    path: sSelItemPath,
+                    model: "ProductsModel"
+                })
             }
         });
     });
